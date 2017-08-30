@@ -1,8 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Architects+Daughter|Baloo+Bhaijaan');
+
 body{
-	background-image: url(../img/Hora-de-Aventura.jpg);
+	background-image: url(../img/fondo.png);
 	background-repeat: no-repeat;
 	background-size: cover;
+	font-family: 'Architects Daughter', cursive;
 }
+
+h1{
+	font-family: 'Baloo Bhaijaan', cursive;
+	font-size: 4em;
+	color: white;
+	text-shadow: 2px 2px black;
+	margin: 0;
+	text-align: center;
+}
+.presentacion{
+	margin: 0;
+	line-height: 1em;
+}
+
+.jugar{
+	border: 3px solid white;
+	border-radius: 10px;
+	width: 20%;
+	height: 50px;
+	margin: 0 auto;
+	background-color: skyblue;
+	color: white;
+	font-family: 'Baloo Bhaijaan', cursive;
+}
+
+.jugar:hover{
+	transform: scale(1.1);
+}
+
 #juego{
 	width: 60%;
 	display: flex;
@@ -16,7 +48,7 @@ body{
 	height: 150px;
 	position: relative;
 	transform-style: preserve-3d;
-  transition: transform 1s;
+  	transition: transform 1s;
 	cursor: pointer;
 }
 
@@ -26,23 +58,40 @@ body{
 	width: 100%;
 }
 
+.front img{
+	height: 80%;
+	width: 80%;
+}
 .flip{
 	transform: rotateY(180deg);
 }
 
 .front,.back{
+	box-sizing: border-box;
 	display: block;
-  position: absolute;
-  width: 90%;
-  height: 90%;
+ 	position: absolute;
+  	width: 90%;
+  	height: 90%;
 	border-radius: 10px;
 	border: 2px solid white;
-  backface-visibility: hidden;
+  	backface-visibility: hidden;
 }
 .front{
-	background-color: pink;
+	background-image: url(../img/carta.jpg);
+	background-size: contain;
+	padding-top: 10px;
 }
 .back{
-	transform: rotateY( 180deg );
-	background-color: skyblue;
+	transform: rotateY(180deg);
+	background-image: url(../img/atras.jpg);
+	background-size: contain;
+}
+#ganar{
+	background-image: url(../img/ganaste.jpg);
+	background-size: cover;
+	width: 50%;
+	height: 400px;
+	text-align: center;
+	margin: auto;
+	display: none;
 }

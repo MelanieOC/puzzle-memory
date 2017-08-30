@@ -3,7 +3,9 @@
 body{
 	background-image: url(../img/fondo.png);
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
 	font-family: 'Architects Daughter', cursive;
 }
 

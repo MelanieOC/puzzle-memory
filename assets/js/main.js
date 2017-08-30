@@ -19,24 +19,22 @@ function juego () {
 			).append(
 			$('<div>').addClass('back').append($('<img>').attr('src', 'assets/img/'+imagenes[i]+'.png'))
 		).appendTo('#juego').click((e)=>{
-			let now=$(e.currentTarget);
-			if(voltear && now.attr('class')=='pausa'){
-				now.removeClass('pausa').addClass('flip');
+			let carta=$(e.currentTarget);
+			if(voltear && carta.attr('class')=='pausa'){
+				carta.removeClass('pausa').addClass('flip');
 				comparar.push({
-					td: now,
-					imagen:now.find('.back img:first-child').attr('src')});
+					td: carta,
+					imagen:carta.find('.back img:first-child').attr('src')});
 				if(comparar.length==2){
+					voltear=false;
 					if(comparar[0].imagen==comparar[1].imagen){
-						voltear=false;
 						contar+=1;
-						console.log(contar)
 						let t = setTimeout(()=>{
 							voltear=true;
 							comparar.forEach(a=>a.td.css('visibility','hidden'));
 							comparar=[];
 						}, 1000);
 					} else {
-						voltear=false;
 						let t = setTimeout(()=>{
 							voltear=true;
 							comparar.forEach(a=>a.td.removeClass("flip").addClass("pausa"));
@@ -58,6 +56,7 @@ function juego () {
 
 $('.jugar').click(()=>{
 	$('#ganar').hide();
-	$('#juego').show()
+	$('#juego').show();
+	$('.presentacion').show();
 	juego()
 });
